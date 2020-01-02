@@ -1,0 +1,68 @@
+<ion-content class="swiper-no-swiping">
+  <div class="container top" [hidden]="keyboard.isVisible">
+      <img src="/assets/img/logo.png" width="300px" height="100px" style="border-radius:70px 20px;">
+
+    <ion-segment (ionChange)="segmentChanged($event)" value="login" color="secondary">
+      <ion-segment-button mode="ios" value="login">
+        <ion-label>Login</ion-label>
+      </ion-segment-button>
+      <ion-segment-button mode="ios" value="register">
+        <ion-label>Register</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <ion-slides>
+    <ion-slide>
+      <div class="slide-inner ion-padding">
+        <span>Login</span>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <!-- <ion-input type="email" placeholder="E-mail" [(ngModel)]="userLogin.email"></ion-input> -->
+          <ion-input type="email" placeholder="E-mail"></ion-input>
+        </ion-item>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <!-- <ion-input type="password" placeholder="Password" [(ngModel)]="userLogin.password"></ion-input> -->
+          <ion-input type="password" placeholder="Password"></ion-input>
+        </ion-item>
+
+        <ion-button class="ion-margin-top" (click)="login()" color="dark" expand="block">
+          Entrar
+        </ion-button>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div class="slide-inner ion-padding">
+        <span>Register</span>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <ion-input type="text" placeholder="Nome"></ion-input>
+        </ion-item>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <!-- <ion-input type="email" placeholder="E-mail" [(ngModel)]="userRegister.email"></ion-input> -->
+          <ion-input type="email" placeholder="E-mail"></ion-input>
+        </ion-item>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <!-- <ion-input type="password" placeholder="Password" [(ngModel)]="userRegister.password"></ion-input> -->
+          <ion-input type="password" placeholder="Password"></ion-input>
+        </ion-item>
+
+        <ion-button class="ion-margin-top" (click)="register()" color="dark" expand="block">
+          Register
+        </ion-button>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="movement">
+    <div class="fire" [ngStyle]="{'background-position-x': firePosition + 'px'}"></div>
+
+    <div class="container bottom ion-text-center" [hidden]="keyboard.isVisible">
+      <span>Welcome to your Rally Point, we want that you feel like a child in a toystore!</span>
+    </div>
+  </div>
+</ion-content>
