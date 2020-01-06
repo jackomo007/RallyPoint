@@ -1,9 +1,72 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>home</ion-title>
+<ion-header >
+  <ion-toolbar color="dark">
+    <ion-title size="large">Rally Point Shop</ion-title>
+    <ion-icon size="large" slot="end" name="jet"></ion-icon>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="container">
+  <ion-list *ngIf="!products.length">
+    <ion-item *ngFor="let item of [0, 1, 2]">
+      <ion-avatar slot="start">
+        <ion-skeleton-text animated></ion-skeleton-text>
+      </ion-avatar>
+      <ion-label>
+        <h3>
+          <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+        </h3>
+        <p>
+          <ion-skeleton-text animated style="width: 80%"></ion-skeleton-text>
+        </p>
+        <p>
+          <ion-skeleton-text animated style="width: 30%"></ion-skeleton-text>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 
+  <ion-list>
+    <ion-item-sliding *ngFor="let product of products">
+      <ion-item button [routerLink]="['/details', product.id]">
+        <ion-avatar slot="start">
+          <img [src]="product.picture">
+        </ion-avatar>
+
+        <ion-label>
+          <span>{{ product.name }}</span>
+          <p>{{ product.description }}</p>
+          <p>{{ product.createdAt | date: 'short' }}</p>
+        </ion-label>
+
+        <ion-note color="primary" slot="end" *ngIf="product.price">{{ product.price | currency: $ }}</ion-note>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="deleteProduct(product.id)">
+          <ion-icon slot="top" name="trash"></ion-icon>
+          Delete
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
+
+<ion-footer>
+    <ion-grid style="background-color: #393536; margin-bottom: 1%;">
+      <ion-row  justify-content-around>
+        <ion-col size="3" style="background-color: red; border-radius: 0 80%;color: white;">
+            <ion-item-option color="none" (click)="logout()">
+              <ion-icon slot="top" name="walk"></ion-icon>
+              Exit
+            </ion-item-option>
+        </ion-col>
+
+        <ion-col size="3" style="background-color: black; border-radius:80% 0%;color: white;">
+          <ion-item-option color="none" routerLink="/details">
+            <ion-icon slot="top" name="list-box"></ion-icon>
+            Add
+          </ion-item-option>
+      </ion-col>
+      </ion-row>
+    </ion-grid>
+</ion-footer>

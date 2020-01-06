@@ -5,22 +5,15 @@ ion-header{
     ion-icon{
         margin-right: 5%;
     }
-}
-ion-content{
     --ion-background-color:#1f1b1c;
 }
+ion-content
+{
+    --ion-background-color:#1f1b1c;
+    ion-input{
+        color: aquamarine;
+    }
 
-ion-list{
-    --ion-background-color:#393536;
-    span {
-        color: #4bd69f;
-    }
-    p {
-        color: azure;
-    }
-    ion-note{
-        color: gold;
-    }
 }
 
 ion-footer{

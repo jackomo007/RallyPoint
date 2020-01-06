@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: "AIzaSyAFH3wafpXib_BKrQl725cF2LZc6dLNmpc",
+    authDomain: "rallypoint-33bd9.firebaseapp.com",
+    databaseURL: "https://rallypoint-33bd9.firebaseio.com",
+    projectId: "rallypoint-33bd9",
+    storageBucket: "rallypoint-33bd9.appspot.com",
+    messagingSenderId: "719638502913",
+    appId: "1:719638502913:web:6b7a87cc096072df992a00"
+  },
 };
 
 /*
