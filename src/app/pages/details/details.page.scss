@@ -16,7 +16,14 @@ ion-content
     ion-input{
         color: aquamarine;
     }
-
+    ion-thumbnail {
+      margin-left:25%;
+      width: 150px;
+      height: 150px;
+        ion-img{
+            border-radius: 20px 30px;
+        }
+    }
 }
 
 ion-footer{
