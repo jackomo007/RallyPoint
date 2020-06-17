@@ -10,7 +10,7 @@
 
 <ion-content class="ion-padding">
   <ion-list>
-    <ion-item>
+    <ion-item style="display: grid;justify-content: center;">
       <ion-thumbnail *ngIf="product.picture">
         <ion-img [src]="product.picture" ></ion-img>
       </ion-thumbnail>
@@ -22,25 +22,24 @@
       <ion-input type="text" [(ngModel)]="product.description" placeholder="Description"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-input type="text" [(ngModel)]="product.picture" placeholder="Picture"></ion-input>
+      <ion-input type="text" [(ngModel)]="product.picture" placeholder="Picture URL"></ion-input>
     </ion-item>
     <ion-item>
       <ion-input type="text" [(ngModel)]="product.price" placeholder="Price"></ion-input>
     </ion-item>
   </ion-list>
+  
 </ion-content>
 
 <ion-footer>
-  <ion-toolbar>
-    <ion-grid style="background-color: #393536; margin-bottom: 1%;">
-      <ion-row justify-content-center>
-        <ion-col size="3" style="background-color: black; border-radius: 0px 0px 80px 80px;color: white;">
-          <ion-item-option color="none" (click)="saveProduct()">
-            <ion-icon slot="top" name="save"></ion-icon>
-            Save
-          </ion-item-option>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-toolbar>
+  <ion-grid style="background-color: #393536;">
+    <ion-row justify-content-center>
+      <ion-col size="3" style="background-color: black; border-radius: 0px 0px 80px 80px;color: white;">
+        <ion-item-option color="none" (click)="saveProduct()">
+          <ion-icon slot="top" name="save"></ion-icon>
+          Save
+        </ion-item-option>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-footer>
